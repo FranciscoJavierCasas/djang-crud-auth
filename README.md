@@ -6,7 +6,7 @@ Proyecto de auth con django utilizando el model user
 
 ```
 git clone 
-cd Render_Tecnology
+cd DJANGO-CRUD-AUTH
 pip3 install -r requirements.txt
 python manage.py runserver
 ```
