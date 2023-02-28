@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django crud aplication</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'estilo.css' %}" />
+    <!--Archivo de ocultar contraseña-->
+    
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
@@ -27,19 +38,20 @@
                     <a class="nav-link" href="{% url 'tasks_completed' %}">Tasks Complete</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/tasks/create/">Create Tasks</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/logout/">Logout</a>
+                    <a class="nav-link" href="{% url 'create_task' %}">Create Tasks</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'settings' user.id %}">settings</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+
                 {% else %}
-                    <a class="nav-link" href="/signup/">Signup</a>
+                    <a class="nav-link" href="{% url 'signup' %}">Signup</a>
                 </li>
                 </li>
-                    <a class="nav-link" href="/signin/">Signin</a>
+                    <a class="nav-link" href="{% url 'signin' %}">Signin</a>
                 </li>
                 {% endif %}
             </ul>
@@ -47,10 +59,30 @@
         </div>
       </nav>
 
-
     {% block content %}
-
     {% endblock %}
     
 </body>
 </html>
+
+<script type="text/javascript">
+    function mostrar(){
+    var tipo = document.getElementById("password");
+  
+    if (tipo.type == 'password'){
+      tipo.type = 'text';
+    } else{
+      tipo.type ='password';
+    }
+  }
+  function mostrar2(){
+    var tipo = document.getElementById("id_new_password2");
+  
+    if (tipo.type == 'password'){
+      tipo.type = 'text';
+    } else{
+      tipo.type ='password';
+    }
+  }
+</script>
+

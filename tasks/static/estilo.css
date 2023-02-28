@@ -1,0 +1,15 @@
+.form-control {
+    padding-right: 100px;
+  }
+ 
+.form-control + .glyphicon {
+    position: absolute;
+    right: 0;
+    padding: 185px 27px;
+    /*
+        position: absolute;
+    left: 455px;
+    top: -24px;*/
+  }  
+
+  

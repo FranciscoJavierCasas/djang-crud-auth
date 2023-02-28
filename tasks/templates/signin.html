@@ -4,9 +4,11 @@
 <main class="container">
     <div class="row">
      <div class="col-md-4 offset-md-4 mt-5">
-         <form action="/signin/" method="POST" class="card card-body">
+        <h5>{{error}}</h5>
+         <form action="{% url 'signin' %}" method="POST" class="card card-body">
+
              <h1 class="text-center">signin</h1>
-             {{error}}
+             <!--{{error}}--> 
              {% csrf_token %}
              <!--{{form}} -->
              <div class="mb-3">
@@ -16,8 +18,9 @@
              <div class="mb-3">
                  <label for="password">Password</label>
                  <input type="password" name="password" id="password" class="form-control" placeholder="Password">
-             </div>
-         
+                 <span id="imgContrasena" data-activo=false class="glyphicon glyphicon-eye-open" onclick="mostrar()"></span>
+                 <!--<span id="imgContrasena" data-activo=false><i class="glyphicon glyphicon-eye-open"></i></span>-->
+            </div>
              <button class="btn btn-primary">
                  Signin
              </button>

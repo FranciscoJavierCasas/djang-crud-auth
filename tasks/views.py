@@ -133,7 +133,7 @@ def signin(request):
         if user is None:
             return render(request, 'signin.html', {
                 'form': AuthenticationForm,
-                'error': "usuario o password es incorrecto"
+                'error': "Usuario o Password es incorrecto"
             })
         else:
             login(request, user)
